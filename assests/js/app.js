@@ -38,6 +38,8 @@ function fetchtodo(){
             createTodo(todoArr.reverse())
 
         }
+        spinner.classList.add('d-none')
+
     }
 }
 
@@ -70,7 +72,6 @@ function createTodo(arr){
 
     todocontainer.innerHTML = result
 
-    spinner.classList.add('d-none')
 
 }
 
@@ -210,7 +211,6 @@ function onupdate(){
 }
 
 function OnRemove(ele){
-    spinner.classList.remove('d-none')
 
     let removeId = ele.closest('tr').id
     Swal.fire({
@@ -223,25 +223,30 @@ function OnRemove(ele){
         confirmButtonText: "Yes, delete it!"
         }).then((result) => {
         if (result.isConfirmed) {
+            spinner.classList.remove('d-none')
             
-        let removeUrl = `${Base_Url}/${removeId}`
+            let removeUrl = `${Base_Url}/${removeId}`
 
-        let xhr = new XMLHttpRequest()
-        xhr.open('DELETE',removeUrl)
+            let xhr = new XMLHttpRequest()
+            xhr.open('DELETE',removeUrl)
 
-        xhr.send()
+            xhr.send()
 
-        xhr.onload = function(){
-            if(xhr.status >= 200 && xhr.status <= 299){
-                ele.closest('tr').remove()
-                snackbar(`The todo id ${removeId} is Removed Successfully!!`,'success')
+            xhr.onload = function(){
+                if(xhr.status >= 200 && xhr.status <= 299){
+                    ele.closest('tr').remove()
+                    snackbar(`The todo id ${removeId} is Removed Successfully!!`,'success')
 
+                }
+
+                spinner.classList.add('d-none')
+            
+                
             }
-
-            spinner.classList.add('d-none')
-        
             
-        }
+            spinner.classList.add('d-none')
+
+
 
         }
     });

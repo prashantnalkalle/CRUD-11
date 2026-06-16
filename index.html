@@ -18,11 +18,11 @@
 							<form action="" id="inputform">
 								<div class="form-group">
 									<label for="title" class="font-weight-bold">Title*</label>
-									<input type="text" class="form-control" id="title">
+									<input type="text" required class="form-control" id="title">
 								</div>
 								<div class="form-group">
 									<label for="UserId" class="font-weight-bold">UserId*</label>
-									<select class="form-control" id="UserId">
+									<select class="form-control" required id="UserId">
 										<option value="1">1</option>
 										<option value="2">2</option>
 										<option value="3">3</option>
@@ -37,7 +37,7 @@
 								</div>
 								<div class="form-group">
 									<label for="status" class="font-weight-bold">Is Completed?</label>
-									<select class="form-control" id="status">
+									<select class="form-control" required id="status">
 										<option value="Select">Select</option>
 										<option value="true" class="bg-success">Completed</option>
 										<option value="false" class="bg-danger">NOt Completed</option>
@@ -67,13 +67,7 @@
 									</tr>
 								</thead>
 								<tbody id="todocontainer">
-									<!-- <tr>
-										<td></td>
-										<td></td>
-										<td></td>
-										<td></td>
-										<td></td>
-									</tr> -->
+									
 								</tbody>
 							</table>
 						</div>
