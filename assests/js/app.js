@@ -65,8 +65,8 @@ function createTodo(arr){
 					<td>${arr.length - i}</td>
 					<td>${ele.title}</td>
 					<td>${seticons(ele.completed)}</td>
-					<td><i class="fa-regular fa-pen-to-square fa-2x text-success" onclick='Onedit(this)'></i></td>
-					<td><i class="fa-solid fa-trash fa-2x text-danger" onclick='OnRemove(this)'></i></td>
+					<td><i role='button' class="fa-regular fa-pen-to-square fa-2x text-success" onclick='Onedit(this)'></i></td>
+					<td><i role='button' class="fa-solid fa-trash fa-2x text-danger" onclick='OnRemove(this)'></i></td>
 				</tr>`
     })
 
@@ -120,8 +120,8 @@ function createNewtodo(newtodo,res){
     tr.innerHTML =`<td>${todoArr.length}</td>
 					<td>${newtodo.title}</td>
 					<td>${seticons(newtodo.completed)}</td>
-					<td><i class="fa-regular fa-pen-to-square fa-2x text-success" onclick='Onedit(this)'></i></td>
-					<td><i class="fa-solid fa-trash fa-2x text-danger" onclick='OnRemove(this)'></i></td>
+					<td><i role='button' class="fa-regular fa-pen-to-square fa-2x text-success" onclick='Onedit(this)'></i></td>
+					<td><i role='button' class="fa-solid fa-trash fa-2x text-danger" onclick='OnRemove(this)'></i></td>
 				`
 
     todocontainer.prepend(tr)
