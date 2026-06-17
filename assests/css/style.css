@@ -4,6 +4,9 @@
     white-space: nowrap;
     text-overflow: ellipsis;
 }
+.highlight{
+    background-color: green;
+}
 
 .spinner{
     position: fixed;
